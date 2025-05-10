@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["@types/node", "@citizenfx/server"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "~/*": ["../../*"],
+    }
+  },
+  "include": ["./"]
+}

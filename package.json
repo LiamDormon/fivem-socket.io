@@ -1,0 +1,41 @@
+{
+	"name": "fivem-socket.io",
+	"author": "LiamDormon",
+	"version": "0.0.1",
+	"license": "LGPL-3.0",
+	"description": "Fivem Wrapper for interacting with socket.io compliant WebSockets",
+	"type": "module",
+	"scripts": {
+		"build": "node scripts/build.js",
+		"watch": "node scripts/build.js --watch",
+		"format": "pnpm biome format --write",
+		"lint": "pnpm biome lint --write"
+	},
+	"keywords": [
+		"fivem"
+	],
+	"repository": {},
+	"bugs": "",
+	"devDependencies": {
+		"@citizenfx/client": "latest",
+		"@citizenfx/server": "latest",
+		"@jgoz/esbuild-plugin-typecheck": "^4.0.3",
+		"@overextended/fx-utils": "latest",
+		"@types/node": "^22.13.9",
+		"@types/react": "^18.3.18",
+		"@types/react-dom": "^18.3.5",
+		"@vitejs/plugin-react": "^4.3.4",
+		"esbuild": "^0.25.0",
+		"typescript": "^5.8.2",
+		"vite": "^5.4.14"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@nativewrappers/fivem": "latest",
+		"@overextended/ox_lib": "latest",
+		"reflect-metadata": "^0.2.2",
+		"socket.io-client": "^4.8.1",
+		"tsyringe": "^4.10.0",
+		"winston": "^3.17.0"
+	}
+}

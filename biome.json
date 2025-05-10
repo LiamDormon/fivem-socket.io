@@ -1,0 +1,69 @@
+{
+  "files": {
+    "include": ["./src/**/*.ts"],
+    "ignore": ["**/*.d.ts"]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "suspicious": {
+        "noConfusingLabels": "off",
+        "noAssignInExpressions": "off",
+        "noExplicitAny": "off",
+        "noFallthroughSwitchClause": "off",
+        "noGlobalIsNan": "off",
+        "noControlCharactersInRegex": "off"
+      },
+      "correctness": {
+        "noUnusedLabels": "off"
+      },
+      "style": {
+        "useEnumInitializers": "off",
+        "noNonNullAssertion": "off",
+        "noParameterAssign": "off",
+        "noArguments": "off",
+        "noUnusedTemplateLiteral": {
+          "fix": "safe"
+        }
+      },
+      "performance": {
+        "noDelete": "off"
+      },
+      "complexity": {
+        "noForEach": "off",
+        "noStaticOnlyClass": "off",
+        "noThisInStatic": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "ignore": [],
+    "attributePosition": "auto",
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 120,
+    "lineEnding": "lf"
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  }
+}
