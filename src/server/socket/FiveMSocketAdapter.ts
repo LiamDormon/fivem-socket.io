@@ -33,24 +33,17 @@ export class FiveMSocketAdapter {
   /**
    * Safely emit a FiveM event with error handling
    * @param eventName Event name to emit
-   * @param target Target to emit to (-1 for broadcast, source ID for specific client)
    * @param args Arguments to pass with the event
    * @returns true if emit was successful, false otherwise
    */
-  private safeEmit(eventName: string, target: number | string, ...args: any[]): boolean {
+  private safeEmit(eventName: string, ...args: any[]): boolean {
     if (!eventName || typeof eventName !== 'string' || eventName.length === 0) {
       this.logger.error('Invalid event name provided for emit:', eventName);
       return false;
     }
 
     try {
-      if (target === 'server') {
-        // Server-only event
         emit(eventName, ...args);
-      } else {
-        // Client event
-        emitNet(eventName, target, ...args);
-      }
       return true;
     } catch (error) {
       this.logger.error(`Failed to emit event "${eventName}":`, error);
@@ -265,8 +258,7 @@ export class FiveMSocketAdapter {
             }
             
             // Use the safe emit method
-            this.safeEmit(callbackEvent, -1, data); // -1 broadcasts to all clients
-            this.safeEmit(`socket:${callbackEvent}`, 'server', data);
+            this.safeEmit(callbackEvent, data);
           } catch (emitError) {
             this.logger.error(`Failed to process event '${event}':`, emitError);
           }
@@ -851,9 +843,7 @@ export class FiveMSocketAdapter {
               data = null; // Use null instead of undefined for consistency in Lua
             }
             
-            this.safeEmit(callbackEvent, -1, data); // -1 broadcasts to all clients
-            // Also emit a server-only event
-            this.safeEmit(`socket:${callbackEvent}`, 'server', data);
+            this.safeEmit(callbackEvent, data); // -1 broadcasts to all clients
           } catch (emitError) {
             this.logger.error(`Failed to emit event '${callbackEvent}':`, emitError);
           }
