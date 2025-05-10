@@ -30,7 +30,6 @@ if connected then
     exports['fivem-socket.io']:socketSubscribe('http://localhost:3000', '/', 'server-event', 'client:socket:data', options)
     
     -- Listen for the callback event
-    RegisterNetEvent('client:socket:data')
     AddEventHandler('client:socket:data', function(data)
         print('Received data from socket server:')
         print(json.encode(data))
