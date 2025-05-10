@@ -1,7 +1,7 @@
 {
 	"name": "fivem-socket.io",
 	"author": "LiamDormon",
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"license": "LGPL-3.0",
 	"description": "Fivem Wrapper for interacting with socket.io compliant WebSockets",
 	"type": "module",
